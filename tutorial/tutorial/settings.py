@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'rest_framework',
+	'rest_framework',	
 ]
 
 MIDDLEWARE = [
@@ -48,9 +48,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+	'quickstart.callgraphmiddleware.CallgraphMiddleware',
 ]
 
 ROOT_URLCONF = 'tutorial.urls'
+CALL_GRAPH_URLS = [
+    {'name': 'users', 'methods': ['GET', 'POST']},
+    {'name': 'groups', 'methods': ['GET','POST']}
+]
 
 TEMPLATES = [
     {
